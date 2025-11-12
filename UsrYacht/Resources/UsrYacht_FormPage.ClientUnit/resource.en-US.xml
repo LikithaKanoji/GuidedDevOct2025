@@ -3,12 +3,14 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Yacht form page" />
+			<Item Name="LocalizableStrings.ActionsButton_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.addRecord_0en5r8v_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_994novd_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_dsr990d_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_fdw9uyj_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_fn1iuua_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_y1qxcg2_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.CalcAvgTicketPriceProcessMenuItem_caption.Value" Value="Run calc avg ticket price process" />
 			<Item Name="LocalizableStrings.CategoryMultiSelect_label.Value" Value="Multi-select" />
 			<Item Name="LocalizableStrings.ExpansionPanel_n19blb8_title.Value" Value="Yacht rental" />
 			<Item Name="LocalizableStrings.GridDetailAddBtn_raq4el6_caption.Value" Value="New" />
