@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "3d9a9110-6e19-4399-bf5d-cd6178b56a7f",
+    "Name": "UsrGenerateYachtRentalRecords",
+    "ModifiedOnUtc": "\/Date(1763100201000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Generate Yacht Rental records",
+    "DependsOn": []
+  }
+}

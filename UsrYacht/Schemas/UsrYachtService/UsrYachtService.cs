@@ -14,14 +14,14 @@ namespace Terrasoft.Configuration
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.Wrapped,
             RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        public decimal GetMaxPriceByDriveTypeId(string driveTypeId)
+        public decimal GetAvgPriceByDriveTypeId(string driveTypeId)
         {
             if (string.IsNullOrEmpty(driveTypeId))
             {
                 return -1;
             }
             Select select = new Select(UserConnection)
-                .Column(Func.Max("UsrPrice"))
+                .Column(Func.Avg("UsrPrice"))
                 .From("UsrYacht")
                 .Where("UsrDriveTypeId").IsEqual(Column.Parameter(new Guid(driveTypeId)))
                 .And("UsrStatusId").IsEqual(Column.Parameter(new Guid("cbccb752-9306-4aa9-aaf9-509b324f6ba5"))) // 1. Operational

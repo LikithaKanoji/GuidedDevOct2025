@@ -40,6 +40,34 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 			},
 			{
 				"operation": "insert",
+				"name": "AddYachtRentalsButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(AddYachtRentalsButton_caption)#",
+					"color": "outline",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrGenerateYachtRentalRecords",
+							"processRunType": "ForTheSelectedPage",
+							"saveAtProcessStart": true,
+							"showNotification": true,
+							"recordIdProcessParameterName": "ProcessSchemaParameter5"
+						}
+					},
+					"clickMode": "default",
+					"icon": "schedule-time-icon"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "ActionsButton",
 				"values": {
 					"type": "crt.Button",
@@ -55,7 +83,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 				},
 				"parentName": "CardToggleContainer",
 				"propertyName": "items",
-				"index": 0
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -74,7 +102,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							"recordIdProcessParameterName": "ProcessSchemaParameter1"
 						}
 					},
-					"icon": "calculator-icon"
+					"icon": "disk-warn-button-icon"
 				},
 				"parentName": "ActionsButton",
 				"propertyName": "menuItems",
@@ -115,7 +143,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 				},
 				"parentName": "CardToggleContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -909,7 +937,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							"MySuperValidator": {
 								"type": "usr.DGValidator",
 								"params": {
-									"minValue": 50,
+									"minValue": 200,
 									"message": "#ResourceString(PriceCannotBeLess)#"
 								}
 							}
@@ -946,7 +974,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 							"MySuperValidator": {
 								"type": "usr.DGValidator",
 								"params": {
-									"minValue": 1,
+									"minValue": 2,
 									"message": "#ResourceString(PassengersCountCannotBeLess)#"
 								}
 							}
@@ -1254,7 +1282,7 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA_
 					return function (control) {
 						let value = control.value;
 						let minValue = config.minValue;
-						let valueIsCorrect = value >= minValue;
+						let valueIsCorrect = value > minValue;
 						var result;
 						if (valueIsCorrect) {
 							result = null;
